@@ -1,0 +1,962 @@
+{
+  "_metadata": {
+    "base_url": "http://localhost:4000",
+    "sample_paper_query": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time-Series Representations",
+    "sample_paper_id": "ef9074014c143481cfc838420b43b057ba8c79e6"
+  },
+  "search_query": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 200,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        },
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting"
+        },
+        {
+          "paperId": "4307218c351f5030366b1cf890aea3d90120951f",
+          "title": "Investigations on a fuzzy process: effect of diffusion on calibration and particle identification in Liquid Argon Time Projection Chambers"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution"
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models"
+        },
+        {
+          "paperId": "b115baf49deccb93750a3e77968c3e8d2104aeaa",
+          "title": "Asymmetric Anomalous Diffusion: an Efficient Way to Detect Memory in Time Series"
+        },
+        {
+          "paperId": "8faffe2cca40b5e8cba836c563fd032a26033bc1",
+          "title": "Image Diffusion Models Exhibit Emergent Temporal Propagation in Videos"
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation"
+        }
+      ]
+    }
+  },
+  "search_retrieval_sparse": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "retrieval": "sparse"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 1,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        }
+      ]
+    }
+  },
+  "search_retrieval_dense": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "retrieval": "dense"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 200,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        },
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting"
+        },
+        {
+          "paperId": "4307218c351f5030366b1cf890aea3d90120951f",
+          "title": "Investigations on a fuzzy process: effect of diffusion on calibration and particle identification in Liquid Argon Time Projection Chambers"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution"
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models"
+        },
+        {
+          "paperId": "b115baf49deccb93750a3e77968c3e8d2104aeaa",
+          "title": "Asymmetric Anomalous Diffusion: an Efficient Way to Detect Memory in Time Series"
+        },
+        {
+          "paperId": "8faffe2cca40b5e8cba836c563fd032a26033bc1",
+          "title": "Image Diffusion Models Exhibit Emergent Temporal Propagation in Videos"
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation"
+        }
+      ]
+    }
+  },
+  "search_retrieval_hybrid": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "retrieval": "hybrid"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 200,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        },
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting"
+        },
+        {
+          "paperId": "4307218c351f5030366b1cf890aea3d90120951f",
+          "title": "Investigations on a fuzzy process: effect of diffusion on calibration and particle identification in Liquid Argon Time Projection Chambers"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution"
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models"
+        },
+        {
+          "paperId": "b115baf49deccb93750a3e77968c3e8d2104aeaa",
+          "title": "Asymmetric Anomalous Diffusion: an Efficient Way to Detect Memory in Time Series"
+        },
+        {
+          "paperId": "8faffe2cca40b5e8cba836c563fd032a26033bc1",
+          "title": "Image Diffusion Models Exhibit Emergent Temporal Propagation in Videos"
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation"
+        }
+      ]
+    }
+  },
+  "search_year_2020": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "year": "2020"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 6,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "paperId": "d479c3eaec60dc8a9d2ebc0db056b7084f1ccdf2",
+          "title": "Joint distribution of multiple boundary local times and related first-passage time problems with multiple targets"
+        },
+        {
+          "paperId": "fa32f0836dbfb481574a23963002118ad3d411d0",
+          "title": "Deep Learning of Diffuse Optical Tomography Based on Time-Domain Radiative Transfer Equation"
+        },
+        {
+          "paperId": "d60fb1d318e6dd29cab49b823152df4e3301cb6b",
+          "title": "Conservation of radial actions in time-dependent spherical potentials"
+        },
+        {
+          "paperId": "2935105b3cafe5b8fb4f9afd5acad6a1fb86b056",
+          "title": "Diffusion of radial action in a galactic disc"
+        },
+        {
+          "paperId": "5fce9fe1bb198ffba41bc859550a36b1c4bb9818",
+          "title": "Dispersion measure variability for 36 millisecond pulsars at 150 MHz with LOFAR"
+        },
+        {
+          "paperId": "2d970ef106071afb47e668645f27cfcbe392a630",
+          "title": "Subdiffusion with time-dependent coefficients: improved regularity and second-order time stepping"
+        }
+      ]
+    }
+  },
+  "search_year_range": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "year": "2018-2022"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 29,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "4307218c351f5030366b1cf890aea3d90120951f",
+          "title": "Investigations on a fuzzy process: effect of diffusion on calibration and particle identification in Liquid Argon Time Projection Chambers"
+        },
+        {
+          "paperId": "2ff0052774f1f6b53a4295a07b791ee6f92b2423",
+          "title": "Quantum simulation of quantum relativistic diffusion via quantum walks"
+        },
+        {
+          "paperId": "d479c3eaec60dc8a9d2ebc0db056b7084f1ccdf2",
+          "title": "Joint distribution of multiple boundary local times and related first-passage time problems with multiple targets"
+        },
+        {
+          "paperId": "2afaa089a8fe3ca7676da56f2ed174880b2e8c67",
+          "title": "High Resolution, Deep Imaging Using Confocal Time-of-Flight Diffuse Optical Tomography"
+        },
+        {
+          "paperId": "fa32f0836dbfb481574a23963002118ad3d411d0",
+          "title": "Deep Learning of Diffuse Optical Tomography Based on Time-Domain Radiative Transfer Equation"
+        },
+        {
+          "paperId": "e1daa9ab7f80ae018d61ed25fa843f5dc4fde637",
+          "title": "Large deviations for diffusions: Donsker and Varadhan meet Freidlin and Wentzell"
+        },
+        {
+          "paperId": "d60fb1d318e6dd29cab49b823152df4e3301cb6b",
+          "title": "Conservation of radial actions in time-dependent spherical potentials"
+        },
+        {
+          "paperId": "2935105b3cafe5b8fb4f9afd5acad6a1fb86b056",
+          "title": "Diffusion of radial action in a galactic disc"
+        },
+        {
+          "paperId": "5fce9fe1bb198ffba41bc859550a36b1c4bb9818",
+          "title": "Dispersion measure variability for 36 millisecond pulsars at 150 MHz with LOFAR"
+        },
+        {
+          "paperId": "c8e6a780ffa1ee650122f55dc0f3184aae21259c",
+          "title": "Chaotic Diffusion in Delay Systems: Giant Enhancement by Time Lag Modulation."
+        }
+      ]
+    }
+  },
+  "search_min_citations": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "minCitationCount": 10
+    },
+    "status_code": 200,
+    "response": {
+      "total": 74,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "b115baf49deccb93750a3e77968c3e8d2104aeaa",
+          "title": "Asymmetric Anomalous Diffusion: an Efficient Way to Detect Memory in Time Series"
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation"
+        },
+        {
+          "paperId": "0d220fcc8d8386be8f82fbc9920722e913cc12cb",
+          "title": "Dynamic Diffusion Transformer"
+        },
+        {
+          "paperId": "158d753d31a766f43381960b84e27fad9d1218e7",
+          "title": "Diffusion Model for the Time Evolution of Particle Loss Rates In Collimator Scans: A Method for Measuring Stochastic Transverse Beam Dynamics in Circular Accelerators"
+        },
+        {
+          "paperId": "97bc770848b8b2e3aeee4809e069ace29cedcb42",
+          "title": "Ditto: Accelerating Diffusion Model via Temporal Value Similarity"
+        },
+        {
+          "paperId": "ace7d07de33a903e1b3052479cacd2dfa7ae2bb6",
+          "title": "TimeDiT: General-purpose Diffusion Transformers for Time Series Foundation Model"
+        },
+        {
+          "paperId": "cc5eb3d6b3b729a491eeb92ece4ca10b3a121a44",
+          "title": "Timestep-Aware Correction for Quantized Diffusion Models"
+        }
+      ]
+    }
+  },
+  "search_open_access": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "openAccessPdf": "1"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 35,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "b115baf49deccb93750a3e77968c3e8d2104aeaa",
+          "title": "Asymmetric Anomalous Diffusion: an Efficient Way to Detect Memory in Time Series"
+        },
+        {
+          "paperId": "2ff0052774f1f6b53a4295a07b791ee6f92b2423",
+          "title": "Quantum simulation of quantum relativistic diffusion via quantum walks"
+        },
+        {
+          "paperId": "5b761550279932095f6956391d2633ca1ea1c8ba",
+          "title": "Observation of diffraction phases in matter-wave scattering"
+        },
+        {
+          "paperId": "d479c3eaec60dc8a9d2ebc0db056b7084f1ccdf2",
+          "title": "Joint distribution of multiple boundary local times and related first-passage time problems with multiple targets"
+        },
+        {
+          "paperId": "901fe93cc42579f21c5fdf1865c0fdba79fa2a24",
+          "title": "Temporal Diffusion"
+        },
+        {
+          "paperId": "4cb9861d42f88e94d9836dceff246bdd7a4f09ce",
+          "title": "Time dependent diffusion in a disordered medium with partially absorbing walls: a perturbative approach."
+        },
+        {
+          "paperId": "8b28f8e80375a2f46720b34c6db227c5d8dca92c",
+          "title": "Diffusion in disordered systems under iterative measurement"
+        },
+        {
+          "paperId": "aa2cfb918f823d5c89cec2c39e11dd25c4439133",
+          "title": "Modeling Trojan dynamics: diffusion mechanisms through resonances"
+        },
+        {
+          "paperId": "2935105b3cafe5b8fb4f9afd5acad6a1fb86b056",
+          "title": "Diffusion of radial action in a galactic disc"
+        },
+        {
+          "paperId": "d4a745a07b6467e0743b461ed5860752c805366c",
+          "title": "Quantum and classical diffusion on small-world networks"
+        }
+      ]
+    }
+  },
+  "search_venue": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "venue": "NeurIPS"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 0,
+      "offset": 0,
+      "next": null,
+      "data": []
+    }
+  },
+  "search_fields_of_study": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "fieldsOfStudy": "Computer Science"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 142,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        },
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution"
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models"
+        },
+        {
+          "paperId": "8faffe2cca40b5e8cba836c563fd032a26033bc1",
+          "title": "Image Diffusion Models Exhibit Emergent Temporal Propagation in Videos"
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation"
+        },
+        {
+          "paperId": "0d220fcc8d8386be8f82fbc9920722e913cc12cb",
+          "title": "Dynamic Diffusion Transformer"
+        },
+        {
+          "paperId": "e0d32e0a9d6d521f75c2ea7822561f786c06cd84",
+          "title": "TimeBridge: Better Diffusion Prior Design with Bridge Models for Time Series Generation"
+        }
+      ]
+    }
+  },
+  "search_publication_types": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "publicationTypes": "JournalArticle"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 144,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        },
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution"
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models"
+        },
+        {
+          "paperId": "8faffe2cca40b5e8cba836c563fd032a26033bc1",
+          "title": "Image Diffusion Models Exhibit Emergent Temporal Propagation in Videos"
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation"
+        },
+        {
+          "paperId": "0d220fcc8d8386be8f82fbc9920722e913cc12cb",
+          "title": "Dynamic Diffusion Transformer"
+        },
+        {
+          "paperId": "8c4df43384bc9eff0597789f358746a20c58e513",
+          "title": "TASR: Timestep-Aware Diffusion Model for Image Super-Resolution"
+        }
+      ]
+    }
+  },
+  "search_pagination": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "limit": 5,
+      "offset": 2
+    },
+    "status_code": 200,
+    "response": {
+      "total": 200,
+      "offset": 2,
+      "next": 7,
+      "data": [
+        {
+          "paperId": "4307218c351f5030366b1cf890aea3d90120951f",
+          "title": "Investigations on a fuzzy process: effect of diffusion on calibration and particle identification in Liquid Argon Time Projection Chambers"
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers"
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models"
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution"
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models"
+        }
+      ]
+    }
+  },
+  "search_fields": {
+    "url": "http://localhost:4000/paper/search",
+    "params": {
+      "query": "TimeDART time series diffusion",
+      "fields": "abstract,year"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 200,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation",
+          "abstract": "Self-supervised learning has garnered increasing attention in time series analysis for benefiting various downstream tasks and reducing reliance on labeled data. Despite its effectiveness, existing methods often struggle to comprehensively capture both long-term dynamic evolution and subtle local patterns in a unified manner. In this work, we propose \\textbf{TimeDART}, a novel self-supervised time series pre-training framework that unifies two powerful generative paradigms to learn more transferable representations. Specifically, we first employ a causal Transformer encoder, accompanied by a patch-based embedding strategy, to model the evolving trends from left to right. Building on this global modeling, we further introduce a denoising diffusion process to capture fine-grained local patterns through forward diffusion and reverse denoising. Finally, we optimize the model in an autoregressive manner. As a result, TimeDART effectively accounts for both global and local sequence features in a coherent way. We conduct extensive experiments on public datasets for time series forecasting and classification. The experimental results demonstrate that TimeDART consistently outperforms previous compared methods, validating the effectiveness of our approach. Our code is available at https://github.com/Melmaphother/TimeDART.",
+          "year": 2024
+        },
+        {
+          "paperId": "d697e6c99c1e7039cab212655757fcb9d1a34f53",
+          "title": "Retrieval-Augmented Diffusion Models for Time Series Forecasting",
+          "abstract": "While time series diffusion models have received considerable focus from many recent works, the performance of existing models remains highly unstable. Factors limiting time series diffusion models include insufficient time series datasets and the absence of guidance. To address these limitations, we propose a Retrieval- Augmented Time series Diffusion model (RATD). The framework of RATD consists of two parts: an embedding-based retrieval process and a reference-guided diffusion model. In the first part, RATD retrieves the time series that are most relevant to historical time series from the database as references. The references are utilized to guide the denoising process in the second part. Our approach allows leveraging meaningful samples within the database to aid in sampling, thus maximizing the utilization of datasets. Meanwhile, this reference-guided mechanism also compensates for the deficiencies of existing time series diffusion models in terms of guidance. Experiments and visualizations on multiple datasets demonstrate the effectiveness of our approach, particularly in complicated prediction tasks.",
+          "year": 2024
+        },
+        {
+          "paperId": "4307218c351f5030366b1cf890aea3d90120951f",
+          "title": "Investigations on a fuzzy process: effect of diffusion on calibration and particle identification in Liquid Argon Time Projection Chambers",
+          "abstract": "Ionization electron diffusion in Liquid Argon Time Projection Chambers (LArTPCs) has typically been considered at the detector design stage, but little attention has been given to its effects on calibration and particle identification. We use a GEANT4-based simulation to study how diffusion impacts these techniques, and give consideration to how this effect is simulated. We find that diffusion can cause a drift-dependent bias to both the median and Most Probable Value (MPV) of dQ/dx distributions. The bias is estimated to be ∼ 2.5% (median) and ∼ 5.0% (MPV) for typical maximum drift times in currently running LArTPCs before adding detector specific considerations such as electric field non-uniformities. This indicates that these metrics should not be used for calibration without care, contrary to the conventional wisdom. The impact of diffusion on the ability of LArTPCs to separate muons and protons is small, and not expected to pose any problems in future detectors. Diffusion may however be a significant source of systematic uncertainty when separating particles of more similar masses (muons and pions, kaons and protons). Separation of such populations may be improved by implementation of a drift-time dependent particle identification.",
+          "year": 2022
+        },
+        {
+          "paperId": "404d15d321656ceb854b3baa05f5f2d73111961f",
+          "title": "From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers",
+          "abstract": "Diffusion Transformers (DiT) have revolutionized high-fidelity image and video synthesis, yet their computational demands remain prohibitive for real-time applications. To solve this problem, feature caching has been proposed to accelerate diffusion models by caching the features in the previous timesteps and then reusing them in the following timesteps. However, at timesteps with significant intervals, the feature similarity in diffusion models decreases substantially, leading to a pronounced increase in errors introduced by feature caching, significantly harming the generation quality. To solve this problem, we propose TaylorSeer, which firstly shows that features of diffusion models at future timesteps can be predicted based on their values at previous timesteps. Based on the fact that features change slowly and continuously across timesteps, TaylorSeer employs a differential method to approximate the higher-order derivatives of features and predict features in future timesteps with Taylor series expansion. Extensive experiments demonstrate its significant effectiveness in both image and video synthesis, especially in high acceleration ratios. For instance, it achieves an almost lossless acceleration of 4.99$\\times$ on FLUX and 5.00$\\times$ on HunyuanVideo without additional training. On DiT, it achieves $3.41$ lower FID compared with previous SOTA at $4.53$$\\times$ acceleration. %Our code is provided in the supplementary materials and will be made publicly available on GitHub. Our codes have been released in Github:https://github.com/Shenyi-Z/TaylorSeer",
+          "year": 2025
+        },
+        {
+          "paperId": "069d06dea29e8386626d706e3527becdc39fcdfe",
+          "title": "EnergyDiff: Universal Time-Series Energy Data Generation Using Diffusion Models",
+          "abstract": "High-resolution time series data are crucial for the operation and planning of energy systems such as electrical power systems and heating systems. Such data often cannot be shared due to privacy concerns, necessitating the use of synthetic data. However, high-resolution time series data is difficult to model due to its inherent high dimensionality and complex temporal dependencies. Leveraging the recent development of generative AI, especially diffusion models, we propose EnergyDiff, a universal data generation framework for energy time series data. EnergyDiff builds on state-of-the-art denoising diffusion probabilistic models, utilizing a proposed denoising network dedicated to high-resolution time series data and introducing a novel Marginal Calibration technique. Our extensive experimental results demonstrate that EnergyDiff achieves significant improvement in capturing the temporal dependencies and marginal distributions compared to baselines, particularly at the 1-minute resolution. EnergyDiff‘s universality is validated across diverse energy domains (e.g., electricity demand, heat pump, PV), multiple time resolutions (1 minute, 15 minutes, 30 minutes and 1 hour), and at both customer and transformer levels.",
+          "year": 2024
+        },
+        {
+          "paperId": "d5190e0fc86b3d9ecc6e3ba91b3ca83610783a6b",
+          "title": "Spatial Degradation-Aware and Temporal Consistent Diffusion Model for Compressed Video Super-Resolution",
+          "abstract": "Due to storage and bandwidth limitations, videos transmitted over the Internet often exhibit low quality, characterized by low-resolution and compression artifacts. Although video super-resolution (VSR) is an efficient video enhancing technique, existing VSR methods focus less on compressed videos. Consequently, directly applying general VSR approaches fails to improve practical videos with compression artifacts, especially when frames are highly compressed at a low bit rate. The inevitable quantization information loss complicates the reconstruction of texture details. Recently, diffusion models have shown superior performance in low-level visual tasks. Leveraging the high-realism generation capability of diffusion models, we propose a novel method that exploits the priors of pre-trained diffusion models for compressed VSR. To mitigate spatial distortions and refine temporal consistency, we introduce a Spatial Degradation-Aware and Temporal Consistent (SDATC) diffusion model. Specifically, we incorporate a distortion control module (DCM) to modulate diffusion model inputs, thereby minimizing the impact of noise from low-quality frames on the generation stage. Subsequently, the diffusion model performs a denoising process to generate details, guided by a fine-tuned compression-aware prompt module (CAPM) and a spatio-temporal attention module (STAM). CAPM dynamically encodes compression-related information into prompts, enabling the sampling process to adapt to different degradation levels. Meanwhile, STAM extends the spatial attention mechanism into the spatio-temporal dimension, effectively capturing temporal correlations. Additionally, we utilize optical flow-based alignment during each denoising step to enhance the smoothness of output videos. Extensive experimental results on benchmark datasets demonstrate the effectiveness of our proposed modules in restoring compressed videos.",
+          "year": 2025
+        },
+        {
+          "paperId": "8e7aea9a10bb0f722936e506a658a30f677ba179",
+          "title": "TS-Diffusion: Generating Highly Complex Time Series with Diffusion Models",
+          "abstract": "While current generative models have achieved promising performances in time-series synthesis, they either make strong assumptions on the data format (e.g., regularities) or rely on pre-processing approaches (e.g., interpolations) to simplify the raw data. In this work, we consider a class of time series with three common bad properties, including sampling irregularities, missingness, and large feature-temporal dimensions, and introduce a general model, TS-Diffusion, to process such complex time series. Our model consists of three parts under the framework of point process. The first part is an encoder of the neural ordinary differential equation (ODE) that converts time series into dense representations, with the jump technique to capture sampling irregularities and self-attention mechanism to handle missing values; The second component of TS-Diffusion is a diffusion model that learns from the representation of time series. These time-series representations can have a complex distribution because of their high dimensions; The third part is a decoder of another ODE that generates time series with irregularities and missing values given their representations. We have conducted extensive experiments on multiple time-series datasets, demonstrating that TS-Diffusion achieves excellent results on both conventional and complex time series and significantly outperforms previous baselines.",
+          "year": 2023
+        },
+        {
+          "paperId": "b115baf49deccb93750a3e77968c3e8d2104aeaa",
+          "title": "Asymmetric Anomalous Diffusion: an Efficient Way to Detect Memory in Time Series",
+          "abstract": "We study time series concerning rare events. The occurrence of a rare event is depicted as a jump of constant intensity always occurring in the same direction, thereby generating an asymmetric diffusion process. We consider the case where the waiting time distribution is an inverse power law with index μ. We focus our attention on μ<3, and we evaluate the scaling exponent δ of the time in the resulting diffusion process. We prove that δ gets its maximum value, δ=1, corresponding to the ballistic motion, at μ=2. We study the resulting diffusion process by means of joint use of the continuous time random walk and of the generalized central limit theorem (CLT), as well as adopting a numerical treatment. We show that rendering the diffusion process to be asymmetric yields the significant benefit of enhancing the value of the scaling parameter δ. Furthermore, this scaling parameter becomes sensitive to the power index μ in the whole region 1",
+          "year": 2001
+        },
+        {
+          "paperId": "8faffe2cca40b5e8cba836c563fd032a26033bc1",
+          "title": "Image Diffusion Models Exhibit Emergent Temporal Propagation in Videos",
+          "abstract": "Image diffusion models, though originally developed for image generation, implicitly capture rich semantic structures that enable various recognition and localization tasks beyond synthesis. In this work, we investigate their self-attention maps can be reinterpreted as semantic label propagation kernels, providing robust pixel-level correspondences between relevant image regions. Extending this mechanism across frames yields a temporal propagation kernel that enables zero-shot object tracking via segmentation in videos. We further demonstrate the effectiveness of test-time optimization strategies-DDIM inversion, textual inversion, and adaptive head weighting-in adapting diffusion features for robust and consistent label propagation. Building on these findings, we introduce DRIFT, a framework for object tracking in videos leveraging a pretrained image diffusion model with SAM-guided mask refinement, achieving state-of-the-art zero-shot performance on standard video object segmentation benchmarks.",
+          "year": 2025
+        },
+        {
+          "paperId": "817de38b0d2f27f1b7a1b5bdb0d1a52ac5fdcdf6",
+          "title": "TRACT: Denoising Diffusion Models with Transitive Closure Time-Distillation",
+          "abstract": "Denoising Diffusion models have demonstrated their proficiency for generative sampling. However, generating good samples often requires many iterations. Consequently, techniques such as binary time-distillation (BTD) have been proposed to reduce the number of network calls for a fixed architecture. In this paper, we introduce TRAnsitive Closure Time-distillation (TRACT), a new method that extends BTD. For single step diffusion,TRACT improves FID by up to 2.4x on the same architecture, and achieves new single-step Denoising Diffusion Implicit Models (DDIM) state-of-the-art FID (7.4 for ImageNet64, 3.8 for CIFAR10). Finally we tease apart the method through extended ablations. The PyTorch implementation will be released soon.",
+          "year": 2023
+        }
+      ]
+    }
+  },
+  "search_title_timedart": {
+    "url": "http://localhost:4000/paper/search/title",
+    "params": {
+      "query": "TimeDART",
+      "limit": 5
+    },
+    "status_code": 200,
+    "response": {
+      "total": 1,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        }
+      ]
+    }
+  },
+  "search_title_year": {
+    "url": "http://localhost:4000/paper/search/title",
+    "params": {
+      "query": "TimeDART",
+      "year": "2024"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 1,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        }
+      ]
+    }
+  },
+  "search_title_fields": {
+    "url": "http://localhost:4000/paper/search/title",
+    "params": {
+      "query": "TimeDART",
+      "fields": "abstract"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 1,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation",
+          "abstract": "Self-supervised learning has garnered increasing attention in time series analysis for benefiting various downstream tasks and reducing reliance on labeled data. Despite its effectiveness, existing methods often struggle to comprehensively capture both long-term dynamic evolution and subtle local patterns in a unified manner. In this work, we propose \\textbf{TimeDART}, a novel self-supervised time series pre-training framework that unifies two powerful generative paradigms to learn more transferable representations. Specifically, we first employ a causal Transformer encoder, accompanied by a patch-based embedding strategy, to model the evolving trends from left to right. Building on this global modeling, we further introduce a denoising diffusion process to capture fine-grained local patterns through forward diffusion and reverse denoising. Finally, we optimize the model in an autoregressive manner. As a result, TimeDART effectively accounts for both global and local sequence features in a coherent way. We conduct extensive experiments on public datasets for time series forecasting and classification. The experimental results demonstrate that TimeDART consistently outperforms previous compared methods, validating the effectiveness of our approach. Our code is available at https://github.com/Melmaphother/TimeDART."
+        }
+      ]
+    }
+  },
+  "sample_paper_search": {
+    "url": "http://localhost:4000/paper/search/title",
+    "params": {
+      "query": "TimeDART",
+      "limit": 10
+    },
+    "status_code": 200,
+    "response": {
+      "total": 1,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+          "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+        }
+      ]
+    }
+  },
+  "paper_detail": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6",
+    "params": null,
+    "status_code": 200,
+    "response": {
+      "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+      "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation"
+    }
+  },
+  "paper_detail_fields": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6",
+    "params": {
+      "fields": "abstract,year,authors"
+    },
+    "status_code": 200,
+    "response": {
+      "paperId": "ef9074014c143481cfc838420b43b057ba8c79e6",
+      "title": "TimeDART: A Diffusion Autoregressive Transformer for Self-Supervised Time Series Representation",
+      "abstract": "Self-supervised learning has garnered increasing attention in time series analysis for benefiting various downstream tasks and reducing reliance on labeled data. Despite its effectiveness, existing methods often struggle to comprehensively capture both long-term dynamic evolution and subtle local patterns in a unified manner. In this work, we propose \\textbf{TimeDART}, a novel self-supervised time series pre-training framework that unifies two powerful generative paradigms to learn more transferable representations. Specifically, we first employ a causal Transformer encoder, accompanied by a patch-based embedding strategy, to model the evolving trends from left to right. Building on this global modeling, we further introduce a denoising diffusion process to capture fine-grained local patterns through forward diffusion and reverse denoising. Finally, we optimize the model in an autoregressive manner. As a result, TimeDART effectively accounts for both global and local sequence features in a coherent way. We conduct extensive experiments on public datasets for time series forecasting and classification. The experimental results demonstrate that TimeDART consistently outperforms previous compared methods, validating the effectiveness of our approach. Our code is available at https://github.com/Melmaphother/TimeDART.",
+      "year": 2024,
+      "authors": [
+        {
+          "authorId": "2322524150",
+          "name": "Daoyu Wang"
+        },
+        {
+          "authorId": "1491233507",
+          "name": "Mingyue Cheng"
+        },
+        {
+          "authorId": "2163529740",
+          "name": "Zhiding Liu"
+        },
+        {
+          "authorId": "2243408564",
+          "name": "Qi Liu"
+        }
+      ]
+    }
+  },
+  "paper_detail_404": {
+    "url": "http://localhost:4000/paper/nonexistent123456",
+    "params": null,
+    "status_code": 404,
+    "response": {
+      "detail": "Paper not found: nonexistent123456"
+    }
+  },
+  "citations": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations",
+    "params": null,
+    "status_code": 200,
+    "response": {
+      "total": 9,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "citingPaper": {
+            "paperId": "876816dcd67c1a90461daa748acd2ccb64c35a79",
+            "title": "DisenTS: Disentangled Channel Evolving Pattern Modeling for Multivariate Time Series Forecasting"
+          }
+        },
+        {
+          "citingPaper": {
+            "paperId": "667eac9ea29c5ae34f1ee54a1a32309eae9e9df0",
+            "title": "A Hybrid Multi-Factor Network with Dynamic Sequence Modeling for Early Warning of Intraoperative Hypotension"
+          }
+        },
+        {
+          "citingPaper": {
+            "paperId": "45bb6a6ad84db9af401977590c3ea99a2c011724",
+            "title": "From Values to Tokens: An LLM-Driven Framework for Context-aware Time Series Forecasting via Symbolic Discretization"
+          }
+        }
+      ]
+    }
+  },
+  "citations_pagination": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations",
+    "params": {
+      "limit": 3,
+      "offset": 1
+    },
+    "status_code": 200,
+    "response": {
+      "total": 9,
+      "offset": 1,
+      "next": 4,
+      "data": [
+        {
+          "citingPaper": {
+            "paperId": "667eac9ea29c5ae34f1ee54a1a32309eae9e9df0",
+            "title": "A Hybrid Multi-Factor Network with Dynamic Sequence Modeling for Early Warning of Intraoperative Hypotension"
+          }
+        },
+        {
+          "citingPaper": {
+            "paperId": "45bb6a6ad84db9af401977590c3ea99a2c011724",
+            "title": "From Values to Tokens: An LLM-Driven Framework for Context-aware Time Series Forecasting via Symbolic Discretization"
+          }
+        }
+      ]
+    }
+  },
+  "citations_fields": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations",
+    "params": {
+      "fields": "title,year"
+    },
+    "status_code": 200,
+    "response": {
+      "total": 9,
+      "offset": 0,
+      "next": null,
+      "data": [
+        {
+          "citingPaper": {
+            "paperId": "876816dcd67c1a90461daa748acd2ccb64c35a79",
+            "title": "DisenTS: Disentangled Channel Evolving Pattern Modeling for Multivariate Time Series Forecasting",
+            "year": 2024
+          }
+        },
+        {
+          "citingPaper": {
+            "paperId": "667eac9ea29c5ae34f1ee54a1a32309eae9e9df0",
+            "title": "A Hybrid Multi-Factor Network with Dynamic Sequence Modeling for Early Warning of Intraoperative Hypotension",
+            "year": 2024
+          }
+        },
+        {
+          "citingPaper": {
+            "paperId": "45bb6a6ad84db9af401977590c3ea99a2c011724",
+            "title": "From Values to Tokens: An LLM-Driven Framework for Context-aware Time Series Forecasting via Symbolic Discretization",
+            "year": 2025
+          }
+        }
+      ]
+    }
+  },
+  "references": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/references",
+    "params": null,
+    "status_code": 200,
+    "response": {
+      "total": 54,
+      "offset": 0,
+      "next": 10,
+      "data": [
+        {
+          "citedPaper": {
+            "paperId": "588492a0e7c59cf49a8123f7cadb80016754ac0b",
+            "title": "The Rise of Diffusion Models in Time-Series Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "830020aa9f71ffccdef3ca3782a9739f07b3a64c",
+            "title": "The Capacity and Robustness Trade-Off: Revisiting the Channel Independent Strategy for Multivariate Time Series Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "c1ee1d42a8fce8574f885fcb0810936e5e20b42c",
+            "title": "Conditional Denoising Meets Polynomial Modeling: A Flexible Decoupled Framework for Time Series Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "89983c7d510ccf76362a4a2881f0c605b5b5d9b3",
+            "title": "TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "1823ce7fc8179b71d63692646a2ac346761eeb50",
+            "title": "Non-autoregressive Conditional Diffusion Models for Time Series Prediction"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "a04d226681c2e44c7f0aac34f26848d87ffc01e0",
+            "title": "Self-Supervised Contrastive Learning for Long-term Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "51aafbb4f2238f3ebe8da3b2dc91a627d9578398",
+            "title": "TimeSiam: A Pre-Training Framework for Siamese Time-Series Modeling"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "8982bb695dcebdacbfd079c62cd7acca8a8b48dc",
+            "title": "CSDI: Conditional Score-based Diffusion Models for Probabilistic Time Series Imputation"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "81150e1593163037b67a5d525f2cb8274a561dc4",
+            "title": "FormerTime: Hierarchical Multi-Scale Representations for Multivariate Time Series Classification"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "5c126ae3421f05768d8edd97ecd44b1364e2c99a",
+            "title": "Denoising Diffusion Probabilistic Models"
+          }
+        }
+      ]
+    }
+  },
+  "references_limit": {
+    "url": "http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/references",
+    "params": {
+      "limit": 5
+    },
+    "status_code": 200,
+    "response": {
+      "total": 54,
+      "offset": 0,
+      "next": 5,
+      "data": [
+        {
+          "citedPaper": {
+            "paperId": "588492a0e7c59cf49a8123f7cadb80016754ac0b",
+            "title": "The Rise of Diffusion Models in Time-Series Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "830020aa9f71ffccdef3ca3782a9739f07b3a64c",
+            "title": "The Capacity and Robustness Trade-Off: Revisiting the Channel Independent Strategy for Multivariate Time Series Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "c1ee1d42a8fce8574f885fcb0810936e5e20b42c",
+            "title": "Conditional Denoising Meets Polynomial Modeling: A Flexible Decoupled Framework for Time Series Forecasting"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "89983c7d510ccf76362a4a2881f0c605b5b5d9b3",
+            "title": "TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders"
+          }
+        },
+        {
+          "citedPaper": {
+            "paperId": "1823ce7fc8179b71d63692646a2ac346761eeb50",
+            "title": "Non-autoregressive Conditional Diffusion Models for Time Series Prediction"
+          }
+        }
+      ]
+    }
+  }
+}

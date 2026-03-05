@@ -1,0 +1,60 @@
+
+============================================================
+[2026-03-05 03:21:58] Load test failed requests: 8
+  base=http://localhost:4000  workers=10  requests_per_endpoint=200
+  [paper detail] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6
+    elapsed=30.021s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [paper detail] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6
+    elapsed=30.026s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [paper detail] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6
+    elapsed=30.037s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [paper detail] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6
+    elapsed=30.035s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [paper detail] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6
+    elapsed=30.047s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [paper detail] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6
+    elapsed=30.042s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.025s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.029s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+
+============================================================
+[2026-03-05 03:43:04] Load test failed requests: 8
+  base=http://localhost:4000  workers=10  requests_per_endpoint=200
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.012s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.006s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.007s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.01s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.009s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.003s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.005s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.007s  error=HTTP 504
+
+============================================================
+[2026-03-05 04:40:44] Load test failed requests: 8
+  base=http://localhost:4000  workers=10  requests_per_endpoint=200
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.008s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.007s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.014s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.008s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.009s  error=ReadTimeout: HTTPConnectionPool(host='localhost', port=4000): Read timed out. (read timeout=30)
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.022s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.015s  error=HTTP 504
+  [citations] http://localhost:4000/paper/ef9074014c143481cfc838420b43b057ba8c79e6/citations
+    elapsed=30.008s  error=HTTP 504

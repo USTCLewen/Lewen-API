@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+qdrant-client
+FlagEmbedding
+httpx
+pydantic
+python-dotenv
+numpy
+torch
+tqdm
+mkdocs-material

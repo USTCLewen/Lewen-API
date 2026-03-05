@@ -1,0 +1,72 @@
+site_name: 乐问学术搜索 API
+site_description: Lewen — 学术论文搜索 API 文档
+site_url: https://wdy.github.io/Paper_Search_API/
+repo_url: https://github.com/wdy/Paper_Search_API
+repo_name: Paper_Search_API
+
+theme:
+  name: material
+  language: zh
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+nav:
+  - 首页: index.md
+  - API 文档:
+      - API 参考 (中文): api-zh.md
+      - API Reference (EN): api-en.md
+  - 开发指南:
+      - 技术架构: architecture.md
+      - 数据集结构: data.md
+      - 增量更新: incremental-update.md
+  - 运维经验:
+      - 性能调优踩坑记录: performance-lessons.md
