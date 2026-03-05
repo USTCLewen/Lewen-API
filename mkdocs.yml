@@ -1,8 +1,8 @@
 site_name: 乐问学术搜索 API
 site_description: Lewen — 学术论文搜索 API 文档
-site_url: https://wdy.github.io/Paper_Search_API/
-repo_url: https://github.com/wdy/Paper_Search_API
-repo_name: Paper_Search_API
+site_url: https://ustclewen.github.io/Lewen-API/
+repo_url: https://github.com/USTCLewen/Lewen-API
+repo_name: Lewen-API
 
 theme:
   name: material
