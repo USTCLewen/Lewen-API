@@ -56,6 +56,16 @@ UVICORN_WORKERS: int = int(os.getenv("UVICORN_WORKERS", "4"))
 UVICORN_TIMEOUT_KEEP_ALIVE: int = int(os.getenv("UVICORN_TIMEOUT_KEEP_ALIVE", "60"))
 UVICORN_LIMIT_CONCURRENCY: int = int(os.getenv("UVICORN_LIMIT_CONCURRENCY", "500"))  # Max concurrent connections
 
+# ── Standalone Admin Server ────────────────────────────────────────────
+# Optional separate admin panel/API process. Restarting it does not interrupt
+# the paper search API process.
+ADMIN_HOST: str = os.getenv("ADMIN_HOST", "0.0.0.0")
+ADMIN_PORT: int = int(os.getenv("ADMIN_PORT", "4100"))
+ADMIN_TARGET_API_BASE_URL: str = os.getenv(
+    "ADMIN_TARGET_API_BASE_URL",
+    f"http://localhost:{API_PORT}",
+)
+
 # ── Search Defaults ────────────────────────────────────────────────────
 DEFAULT_LIMIT: int = 10
 MAX_LIMIT: int = 100
