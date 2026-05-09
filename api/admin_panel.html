@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Search Admin</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f9fafb;
+      --text: #18202c;
+      --muted: #657282;
+      --line: #dfe4ea;
+      --strong: #111827;
+      --blue: #cd785c;
+      --blue-2: #fff3ee;
+      --sidebar: #fff1eb;
+      --sidebar-hover: #f6d6c9;
+      --sidebar-line: #edc0b0;
+      --sidebar-text: #6f3b2c;
+      --green: #0f8a5f;
+      --red: #c2413b;
+      --amber: #b45309;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button, input, select, textarea { font: inherit; }
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 8px 11px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+    button:hover { border-color: #b8c1cc; background: #f8fafc; }
+    button:disabled { opacity: 0.55; cursor: not-allowed; }
+    button.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+    button.primary:hover { background: #b8654d; }
+    button.danger { color: var(--red); border-color: #f1b5b0; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+      padding: 9px 10px;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(205, 120, 92, 0.18); }
+    label { display: grid; gap: 6px; color: var(--muted); font-size: 12px; font-weight: 650; }
+    .shell { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+    .sidebar {
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      padding: 22px 16px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .brand { color: #4f2b22; font-weight: 750; font-size: 18px; margin: 0 0 22px; }
+    .brand small { display: block; color: #9a6a5a; font-weight: 500; font-size: 12px; margin-top: 3px; }
+    .nav { display: grid; gap: 5px; }
+    .nav button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: var(--sidebar-text);
+      border-color: transparent;
+      padding: 10px 11px;
+    }
+    .nav button.active, .nav button:hover { background: var(--sidebar-hover); color: #4f2b22; border-color: var(--sidebar-line); }
+    .nav button.active { box-shadow: inset 3px 0 0 var(--blue); }
+    main { min-width: 0; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 24px;
+      background: rgba(246, 247, 249, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .secret-row { display: flex; gap: 8px; align-items: center; min-width: min(520px, 100%); }
+    .secret-row input { min-width: 220px; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--amber); }
+    .dot.ok { background: var(--green); }
+    .dot.bad { background: var(--red); }
+    .content { padding: 24px; display: grid; gap: 18px; }
+    .view { display: none; gap: 18px; }
+    .view.active { display: grid; }
+    .title-row { display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+    h1 { margin: 0; font-size: 24px; letter-spacing: 0; }
+    h2 { margin: 0 0 13px; font-size: 16px; letter-spacing: 0; }
+    p.subtle { margin: 4px 0 0; color: var(--muted); }
+    .grid { display: grid; gap: 14px; }
+    .grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      min-width: 0;
+    }
+    .metric { display: grid; gap: 4px; }
+    .metric span { color: var(--muted); font-size: 12px; font-weight: 650; }
+    .metric strong { font-size: 23px; color: var(--strong); overflow-wrap: anywhere; }
+    .form-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: end; }
+    .form-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .form-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; font-weight: 750; background: var(--panel-2); }
+    td { overflow-wrap: anywhere; }
+    .badge { display: inline-flex; border-radius: 999px; padding: 3px 8px; font-size: 12px; font-weight: 700; background: #f7ebe6; color: #914b37; }
+    .badge.ok { background: #e8f7f0; color: var(--green); }
+    .badge.bad { background: #fdecec; color: var(--red); }
+    .badge.warn { background: #fff7ed; color: var(--amber); }
+    pre {
+      margin: 0;
+      background: #0f172a;
+      color: #dbeafe;
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 180px;
+      max-height: 420px;
+      overflow: auto;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .notice {
+      border: 1px solid #edc2b4;
+      background: var(--blue-2);
+      color: #7c3f2e;
+      border-radius: 8px;
+      padding: 12px;
+      display: none;
+    }
+    .notice.show { display: block; }
+    .notice.error { border-color: #fac5c0; background: #fff1f1; color: #991b1b; }
+    .empty { color: var(--muted); padding: 18px 0; }
+    @media (max-width: 980px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; }
+      .nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .topbar { position: static; flex-direction: column; align-items: stretch; }
+      .grid.cols-4, .grid.cols-3, .grid.cols-2, .form-grid, .form-grid.two, .form-grid.three { grid-template-columns: 1fr; }
+      .title-row { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <p class="brand">Paper Search Admin <small>Local operations panel</small></p>
+      <nav class="nav" id="nav">
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="database">Database</button>
+        <button data-view="keys">API Keys</button>
+        <button data-view="tester">API Tester</button>
+        <button data-view="load">Load Test</button>
+        <button data-view="incremental">Incremental</button>
+        <button data-view="jobs">Jobs</button>
+      </nav>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div class="secret-row">
+          <input id="secret" type="password" placeholder="ADMIN_SECRET">
+          <button class="primary" id="saveSecret">Unlock</button>
+          <button id="refreshAll">Refresh</button>
+        </div>
+        <span class="status-pill"><i class="dot" id="authDot"></i><span id="authText">Locked</span></span>
+      </header>
+      <section class="content">
+        <div id="notice" class="notice"></div>
+
+        <section class="view active" id="view-dashboard">
+          <div class="title-row">
+            <div><h1>Dashboard</h1><p class="subtle">Service health, corpus release, Qdrant and key summary.</p></div>
+          </div>
+          <div class="grid cols-4" id="metrics"></div>
+          <div class="grid cols-2">
+            <div class="card"><h2>Runtime</h2><pre id="runtimeBox">No data yet.</pre></div>
+            <div class="card"><h2>Recent Jobs</h2><div id="recentJobs" class="empty">No jobs yet.</div></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-database">
+          <div class="title-row">
+            <div><h1>Database</h1><p class="subtle">Fast health checks load instantly; exact counts run as a background job.</p></div>
+            <button class="primary" id="refreshDbStats">Refresh exact counts</button>
+          </div>
+          <div class="grid cols-3" id="dbCards"></div>
+          <div class="card"><h2>Cached Exact Counts</h2><div id="dbStats">No cached stats.</div></div>
+        </section>
+
+        <section class="view" id="view-keys">
+          <div class="title-row">
+            <div><h1>API Keys</h1><p class="subtle">Create, revoke, activate, and delete keys.</p></div>
+            <button id="reloadKeys">Reload keys</button>
+          </div>
+          <div class="card">
+            <h2>Create Key</h2>
+            <div class="form-grid">
+              <label>Name <input id="keyName" placeholder="user or team"></label>
+              <label>Email <input id="keyEmail" placeholder="user@example.com"></label>
+              <label>Expires At <input id="keyExpires" placeholder="2026-12-31T23:59:59+00:00"></label>
+              <button class="primary" id="createKey">Create</button>
+            </div>
+          </div>
+          <div class="card"><h2>Keys</h2><div id="keysTable" class="empty">No data yet.</div></div>
+        </section>
+
+        <section class="view" id="view-tester">
+          <div class="title-row">
+            <div><h1>API Tester</h1><p class="subtle">Run one request and inspect the JSON response.</p></div>
+          </div>
+          <div class="card">
+            <div class="form-grid">
+              <label>Endpoint
+                <select id="testKind">
+                  <option value="search">Search</option>
+                  <option value="title">Title Search</option>
+                  <option value="detail">Paper Detail</option>
+                  <option value="citations">Citations</option>
+                  <option value="references">References</option>
+                </select>
+              </label>
+              <label>Query <input id="testQuery" value="transformer attention"></label>
+              <label>Paper ID <input id="testPaperId" placeholder="2309.06180 or SHA"></label>
+              <label>API Key <input id="testApiKey" placeholder="optional; .env default"></label>
+              <label>Retrieval <select id="testRetrieval"><option>hybrid</option><option>sparse</option><option>dense</option></select></label>
+              <label>Limit <input id="testLimit" type="number" value="5" min="1" max="100"></label>
+              <label>Fields <input id="testFields" placeholder="abstract,year or *"></label>
+              <button class="primary" id="runApiTest">Run test</button>
+            </div>
+          </div>
+          <div class="card"><h2>Response</h2><pre id="apiTestResult">No request yet.</pre></div>
+        </section>
+
+        <section class="view" id="view-load">
+          <div class="title-row">
+            <div><h1>Load Test</h1><p class="subtle">Starts the existing Python load test in the background.</p></div>
+          </div>
+          <div class="card">
+            <div class="form-grid">
+              <label>Base URL <input id="loadBase" value="http://localhost:4000"></label>
+              <label>Workers <input id="loadWorkers" type="number" value="10" min="1" max="256"></label>
+              <label>Requests / endpoint <input id="loadRequests" type="number" value="20" min="1" max="5000"></label>
+              <label>Timeout seconds <input id="loadTimeout" type="number" value="30" min="1" max="600"></label>
+              <label>API Key <input id="loadApiKey" placeholder="optional; .env default, not logged"></label>
+              <button class="primary" id="startLoad">Start load test</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-incremental">
+          <div class="title-row">
+            <div><h1>Incremental Update</h1><p class="subtle">Run full or staged S2 incremental update jobs.</p></div>
+          </div>
+          <div class="card">
+            <div class="form-grid">
+              <label>Action
+                <select id="incrAction">
+                  <option value="full">Full</option>
+                  <option value="download">Download</option>
+                  <option value="validate">Validate</option>
+                  <option value="merge">Merge</option>
+                  <option value="qdrant">Qdrant</option>
+                </select>
+              </label>
+              <label>Target Release <input id="incrTarget" value="latest"></label>
+              <label>Incremental Dir <input id="incrDir" placeholder="PaperData/incremental/2026-..._to_2026-..."></label>
+              <label>GPU List <input id="incrGpu" value="0,2,3"></label>
+              <button class="primary" id="startIncr">Start incremental job</button>
+            </div>
+          </div>
+          <div class="card"><h2>Local Incremental Directories</h2><div id="incrDirs" class="empty">No data yet.</div></div>
+        </section>
+
+        <section class="view" id="view-jobs">
+          <div class="title-row">
+            <div><h1>Jobs</h1><p class="subtle">Background load test, database stats, and incremental jobs.</p></div>
+            <button id="reloadJobs">Reload jobs</button>
+          </div>
+          <div class="grid cols-2">
+            <div class="card"><h2>Job List</h2><div id="jobsTable" class="empty">No jobs yet.</div></div>
+            <div class="card"><h2>Log Tail</h2><pre id="jobLog">Select a job.</pre></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const state = { status: null, jobs: [] };
+
+    function secret() { return sessionStorage.getItem("adminSecret") || $("secret").value.trim(); }
+    function setNotice(message, isError = false) {
+      const box = $("notice");
+      box.textContent = message;
+      box.className = "notice show" + (isError ? " error" : "");
+      if (!isError) setTimeout(() => { box.className = "notice"; }, 3500);
+    }
+    function setAuth(ok, text) {
+      $("authDot").className = "dot " + (ok ? "ok" : "bad");
+      $("authText").textContent = text;
+    }
+    async function api(path, options = {}) {
+      const headers = Object.assign({"X-Admin-Secret": secret()}, options.headers || {});
+      if (options.body && !(options.body instanceof FormData)) headers["Content-Type"] = "application/json";
+      const res = await fetch(path, Object.assign({}, options, {headers}));
+      const contentType = res.headers.get("content-type") || "";
+      const data = contentType.includes("application/json") ? await res.json() : await res.text();
+      if (!res.ok) {
+        const detail = data && data.detail ? data.detail : (typeof data === "string" ? data : res.statusText);
+        throw new Error(detail);
+      }
+      return data;
+    }
+    function fmtDate(value) { return value ? new Date(value).toLocaleString() : "-"; }
+    function esc(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (m) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+    }
+    function badge(value, kind) { return `<span class="badge ${kind || ""}">${esc(value)}</span>`; }
+
+    function renderMetrics(status) {
+      const q = status.qdrant || {};
+      const db = status.sqlite || {};
+      const auth = status.auth || {};
+      $("metrics").innerHTML = [
+        ["Release", status.release || "unknown"],
+        ["papers.db", db.database?.size_human || "missing"],
+        ["Qdrant", q.ok ? "online" : "not ready"],
+        ["API keys", `${auth.active || 0} active / ${auth.total || 0}`],
+      ].map(([label, value]) => `<div class="card metric"><span>${label}</span><strong>${esc(value)}</strong></div>`).join("");
+      $("runtimeBox").textContent = JSON.stringify({
+        api: status.api,
+        paths: status.paths,
+        sqlite_ok: db.ok,
+        qdrant: q,
+      }, null, 2);
+    }
+    function renderDb(status) {
+      const db = status.sqlite || {};
+      const tables = db.tables || {};
+      $("dbCards").innerHTML = [
+        ["Database", db.database?.exists ? db.database.size_human : "missing"],
+        ["WAL", db.wal?.exists ? db.wal.size_human : "none"],
+        ["Core tables", Object.values(tables).filter(t => t.exists).length + " / " + Object.keys(tables).length],
+      ].map(([label, value]) => `<div class="card metric"><span>${label}</span><strong>${esc(value)}</strong></div>`).join("");
+      renderDbStats(status.db_stats_cache);
+    }
+    function renderDbStats(stats) {
+      if (!stats) { $("dbStats").innerHTML = `<div class="empty">No cached stats. Start a refresh job.</div>`; return; }
+      const rows = Object.entries(stats.tables || {}).map(([name, item]) => `
+        <tr><td>${esc(name)}</td><td>${item.count == null ? "-" : Number(item.count).toLocaleString()}</td><td>${esc(item.error || "")}</td></tr>
+      `).join("");
+      $("dbStats").innerHTML = `<p class="subtle">Generated ${fmtDate(stats.generated_at)}, elapsed ${stats.elapsed_s}s</p>
+        <table><thead><tr><th>Table</th><th>Count</th><th>Error</th></tr></thead><tbody>${rows}</tbody></table>`;
+    }
+    function renderIncrementalDirs(status) {
+      const dirs = status.incremental_dirs || [];
+      if (!dirs.length) { $("incrDirs").innerHTML = `<div class="empty">No local incremental directories.</div>`; return; }
+      $("incrDirs").innerHTML = `<table><thead><tr><th>Name</th><th>Path</th><th>State</th><th>Modified</th></tr></thead><tbody>` +
+        dirs.map(d => `<tr><td>${esc(d.name)}</td><td>${esc(d.path)}</td><td>
+          ${d.has_validation_progress ? badge("validated","ok") : badge("no validation","warn")}
+          ${d.has_merge_progress ? badge("merged","ok") : ""}
+          ${d.has_qdrant_task ? badge("qdrant task","ok") : ""}
+        </td><td>${fmtDate(d.modified_at)}</td></tr>`).join("") + `</tbody></table>`;
+    }
+    async function loadStatus() {
+      const status = await api("/admin/status");
+      state.status = status;
+      setAuth(true, "Unlocked");
+      renderMetrics(status);
+      renderDb(status);
+      renderIncrementalDirs(status);
+    }
+    async function loadKeys() {
+      const keys = await api("/admin/keys");
+      if (!keys.length) { $("keysTable").innerHTML = `<div class="empty">No API keys.</div>`; return; }
+      $("keysTable").innerHTML = `<table><thead><tr><th>Prefix</th><th>Owner</th><th>Email</th><th>Status</th><th>Created</th><th>Last Used</th><th>Actions</th></tr></thead><tbody>` +
+        keys.map(k => `<tr><td>${esc(k.key_prefix)}</td><td>${esc(k.name)}</td><td>${esc(k.email)}</td><td>${k.is_active ? badge("active","ok") : badge("inactive","bad")}</td><td>${fmtDate(k.created_at)}</td><td>${fmtDate(k.last_used_at)}</td><td class="actions">
+          <button data-key-action="${k.is_active ? "revoke" : "activate"}" data-prefix="${esc(k.key_prefix)}">${k.is_active ? "Revoke" : "Activate"}</button>
+          <button class="danger" data-key-action="delete" data-prefix="${esc(k.key_prefix)}">Delete</button>
+        </td></tr>`).join("") + `</tbody></table>`;
+    }
+    async function loadJobs() {
+      const jobs = await api("/admin/jobs");
+      state.jobs = jobs;
+      const html = renderJobsTable(jobs);
+      $("jobsTable").innerHTML = html;
+      $("recentJobs").innerHTML = html;
+    }
+    function renderJobsTable(jobs) {
+      if (!jobs.length) return `<div class="empty">No jobs yet.</div>`;
+      return `<table><thead><tr><th>ID</th><th>Kind</th><th>Status</th><th>Started</th><th>Code</th><th>Actions</th></tr></thead><tbody>` +
+        jobs.map(j => `<tr class="job-row" data-job-id="${esc(j.id)}"><td>${esc(j.id)}</td><td>${esc(j.kind)}</td><td>${badge(j.status, j.status === "succeeded" ? "ok" : ["failed", "cancelled"].includes(j.status) ? "bad" : "warn")}</td><td>${fmtDate(j.started_at)}</td><td>${j.returncode ?? "-"}</td><td>${j.status === "running" || j.status === "stopping" ? `<button class="danger" data-job-interrupt="${esc(j.id)}">Interrupt</button>` : ""}</td></tr>`).join("") +
+      `</tbody></table>`;
+    }
+    async function selectJob(id) {
+      const job = await api(`/admin/jobs/${id}`);
+      $("jobLog").textContent = job.log_tail || "No log output yet.";
+    }
+    async function refreshAll() {
+      try {
+        await Promise.all([loadStatus(), loadKeys(), loadJobs()]);
+      } catch (err) {
+        setAuth(false, "Locked");
+        setNotice(err.message, true);
+      }
+    }
+
+    $("saveSecret").onclick = async () => {
+      sessionStorage.setItem("adminSecret", $("secret").value.trim());
+      await refreshAll();
+    };
+    $("refreshAll").onclick = refreshAll;
+    $("reloadKeys").onclick = loadKeys;
+    $("reloadJobs").onclick = loadJobs;
+    $("refreshDbStats").onclick = async () => {
+      const job = await api("/admin/db/stats/refresh", {method: "POST"});
+      setNotice(`Started DB stats job ${job.id}`);
+      await loadJobs();
+    };
+    $("createKey").onclick = async () => {
+      const body = {name: $("keyName").value.trim(), email: $("keyEmail").value.trim(), expires_at: $("keyExpires").value.trim() || null};
+      const created = await api("/admin/keys", {method: "POST", body: JSON.stringify(body)});
+      setNotice(`Created key: ${created.key}`);
+      await loadKeys();
+    };
+    $("runApiTest").onclick = async () => {
+      $("apiTestResult").textContent = "Running...";
+      const body = {
+        kind: $("testKind").value,
+        query: $("testQuery").value,
+        paper_id: $("testPaperId").value,
+        api_key: $("testApiKey").value,
+        retrieval: $("testRetrieval").value,
+        limit: Number($("testLimit").value || 5),
+        fields: $("testFields").value,
+      };
+      const result = await api("/admin/api-test", {method: "POST", body: JSON.stringify(body)});
+      $("apiTestResult").textContent = JSON.stringify(result, null, 2);
+    };
+    $("startLoad").onclick = async () => {
+      const body = {
+        base_url: $("loadBase").value,
+        workers: Number($("loadWorkers").value || 10),
+        requests_per_endpoint: Number($("loadRequests").value || 20),
+        timeout: Number($("loadTimeout").value || 30),
+        api_key: $("loadApiKey").value,
+      };
+      const job = await api("/admin/jobs/load-test", {method: "POST", body: JSON.stringify(body)});
+      setNotice(`Started load test job ${job.id}`);
+      await loadJobs();
+    };
+    $("startIncr").onclick = async () => {
+      const action = $("incrAction").value;
+      if (["full", "merge", "qdrant"].includes(action) && !confirm(`Start ${action} incremental job?`)) return;
+      const body = {action, target: $("incrTarget").value || "latest", incr_dir: $("incrDir").value, gpu_list: $("incrGpu").value || "0,2,3"};
+      const job = await api("/admin/jobs/incremental", {method: "POST", body: JSON.stringify(body)});
+      setNotice(`Started incremental job ${job.id}`);
+      await loadJobs();
+    };
+    document.body.addEventListener("click", async (event) => {
+      const navBtn = event.target.closest("[data-view]");
+      if (navBtn) {
+        document.querySelectorAll(".nav button").forEach(b => b.classList.remove("active"));
+        navBtn.classList.add("active");
+        document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+        $("view-" + navBtn.dataset.view).classList.add("active");
+      }
+      const keyBtn = event.target.closest("[data-key-action]");
+      if (keyBtn) {
+        const action = keyBtn.dataset.keyAction;
+        const prefix = keyBtn.dataset.prefix;
+        if (action === "delete" && !confirm(`Delete API key ${prefix}?`)) return;
+        await api(`/admin/keys/${prefix}/${action === "delete" ? "" : action}`.replace(/\/$/, ""), {method: action === "delete" ? "DELETE" : "POST"});
+        await loadKeys();
+      }
+      const interruptBtn = event.target.closest("[data-job-interrupt]");
+      if (interruptBtn) {
+        const id = interruptBtn.dataset.jobInterrupt;
+        if (!confirm(`Interrupt job ${id}?`)) return;
+        await api(`/admin/jobs/${id}/interrupt`, {method: "POST"});
+        setNotice(`Interrupt requested for job ${id}`);
+        await loadJobs();
+        await selectJob(id);
+        return;
+      }
+      const row = event.target.closest(".job-row");
+      if (row) selectJob(row.dataset.jobId);
+    });
+    const saved = sessionStorage.getItem("adminSecret");
+    if (saved) { $("secret").value = saved; refreshAll(); }
+    setInterval(() => { if (secret()) loadJobs().catch(() => {}); }, 5000);
+  </script>
+</body>
+</html>
